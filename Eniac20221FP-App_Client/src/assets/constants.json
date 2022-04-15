@@ -1,0 +1,16 @@
+{
+    "colors":{
+        "pallet1": {
+            "black": "#000000",
+            "white": "#FFFFFF",
+            "background": "#191919",
+            "background2": "#0f0f0f",
+            "color1": "#3D0000",
+            "color2": "#950101",
+            "color3": "#FF0000"
+        }
+    },
+    "strings": {
+
+    }
+}

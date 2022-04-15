@@ -19,6 +19,8 @@ target 'Eniac20221FP' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'Eniac20221FPTests' do
     inherit! :complete
     # Pods for testing

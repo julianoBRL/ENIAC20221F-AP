@@ -6,18 +6,16 @@ AppRegistry.registerComponent(appName, () => App);
 
 /*
 
-Consertar o commit do ServerSide
+Consertar o commit do ServerSide (Done)
 
-Arrumar use effect do Splash.js
-Add lib lottie para a Splash.js
+Arrumar use effect do Splash.js (Done)
+Add lib lottie para a Splash.js (Adiado)
 
-Desabilitar goBack na root Router.js
-Remover headers do stack na Router.js
+Desabilitar goBack na root Router.js (Adiado)
+Remover headers do stack na Router.js (Adiado)
 
-Criar tela de registro no Register.js
 Criar tela de login no Login.js
-(Talver copiar do projeto moodle? ou
-    copiar de um tutorial legal?)
+Criar tela de registro no Register.js
 
 Criar um parse server somente para esse projeto
 Sincronizar o usuario com o parse server
