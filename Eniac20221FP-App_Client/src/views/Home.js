@@ -13,6 +13,7 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import moment from 'moment';
 import {colors} from '../assets/constants.json';
 
 const pallet = colors.pallet1;
@@ -95,7 +96,7 @@ const HomeScreen = ({navigation, route}) => {
             <View style={styles.cardContainer}>
               <Text style={styles.cardId}>{item.objectId}</Text>
               <Text style={styles.cardTitle}>{item.titulo}</Text>
-              <Text style={styles.cardDatetime}>{item.createdAt}</Text>
+              <Text style={styles.cardDatetime}>{ moment(item.createdAt).format('DD/MM/YYYY HH:mm')}</Text>
             </View>
           )
         }}

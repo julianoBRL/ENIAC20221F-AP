@@ -14,6 +14,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AuthContext from '../components/AuthContext';
 import {colors} from '../assets/constants.json';
 import Parse from 'parse/react-native.js';
+import moment from 'moment';
 
 const pallet = colors.pallet1;
 
@@ -57,7 +58,7 @@ const ProfileScreen = () => {
         </View>
         <View style={styles.userdata}>
           <Text style={styles.userdataTitle}>Member since: </Text>
-          <Text style={styles.userdataValue}>{userdata.createdAt.toISOString()}</Text>
+          <Text style={styles.userdataValue}>{moment(userdata.createdAt.toISOString()).format('DD/MM/YYYY HH:mm')}</Text>
         </View>
         <View style={styles.userdata}>
           <Text style={styles.userdataTitle}>Unique ID: </Text>

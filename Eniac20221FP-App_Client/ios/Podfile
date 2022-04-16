@@ -21,6 +21,8 @@ target 'Eniac20221FP' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
   target 'Eniac20221FPTests' do
     inherit! :complete
     # Pods for testing
