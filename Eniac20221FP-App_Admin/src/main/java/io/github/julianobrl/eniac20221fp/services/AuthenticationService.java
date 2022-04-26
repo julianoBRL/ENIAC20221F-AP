@@ -40,6 +40,7 @@ public class AuthenticationService {
 					AutheticationContext.getInstance().authnticate(userdata);
 					Router.goToHome();
 				} catch (IOException e) {
+					e.printStackTrace();
 					JStyledOptionMessage.create("Error", "Invalid Username/Password", JOptionPane.PLAIN_MESSAGE);
 				}
 			}

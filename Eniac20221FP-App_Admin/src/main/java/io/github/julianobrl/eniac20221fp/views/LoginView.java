@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -25,12 +27,14 @@ import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 
 @SuppressWarnings("serial")
-public class LoginView extends JStyledPanel{
+public class LoginView extends JStyledPanel implements KeyListener{
 	
 	private JRoundTextField username;
 	private JRoundedPasswordField password;
 	
 	public LoginView() {
+		
+		this.addKeyListener(this);
 
 		GridBagConstraints c = new GridBagConstraints();
 		
@@ -117,16 +121,7 @@ public class LoginView extends JStyledPanel{
 		signinButton.setBackground(Theme.COLOR2);
 		signinButton.setForeground(Theme.WHITE);
 		signinButton.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				try {
-					EventManager.callEvent("Login", new LoginObject(username.getText(), String.valueOf(password.getPassword())));
-				} catch (Exception e1) {
-					System.out.println("Error on login event!!");
-					e1.printStackTrace();
-				}
-			}
-			
+			public void actionPerformed(ActionEvent e) {login();}
 		});
 		add(signinButton,c);
 		
@@ -169,6 +164,31 @@ public class LoginView extends JStyledPanel{
         });
 		add(registernow,c);
 		
+	}
+	
+	private void login() {
+		try {
+			EventManager.callEvent("Login", new LoginObject(username.getText(), String.valueOf(password.getPassword())));
+		} catch (Exception e1) {
+			System.out.println("Error on login event!!");
+			e1.printStackTrace();
+		}
+	}
+
+	public void keyTyped(KeyEvent e) {
+
+		System.out.println("keytyped");
+	}
+
+	public void keyPressed(KeyEvent e) {
+		System.out.println("keypresses");
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+		    login();
+		}
+	}
+
+	public void keyReleased(KeyEvent e) {
+		System.out.println("key released");
 	}
 	
 }

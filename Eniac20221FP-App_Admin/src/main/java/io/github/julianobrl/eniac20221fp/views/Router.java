@@ -2,6 +2,7 @@ package io.github.julianobrl.eniac20221fp.views;
 
 import io.github.julianobrl.eniac20221fp.Main;
 import io.github.julianobrl.eniac20221fp.components.JStyledFrame;
+import io.github.julianobrl.eniac20221fp.services.DenunciasService;
 import io.github.julianobrl.eniac20221fp.storages.AutheticationContext;
 
 public class Router {
@@ -38,9 +39,11 @@ public class Router {
 	
 	public static void goToHome() {
 		JStyledFrame frame = Main.getMainFrame();
+		homeView.setDenuncias(DenunciasService.findDenuncias());
 		frame.setContentPane(homeView);
-		frame.setSize(600,600);
+		frame.setSize(400,600);
 		refreshFrame(frame);
+		
 	}
 	
 	private static void refreshFrame(JStyledFrame frame) {

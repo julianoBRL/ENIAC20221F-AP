@@ -19,9 +19,10 @@ app.use(express.static("public", { maxAge: 31557600000 }));
 
 const server_url = `http://${process.env.SERVER_HOST}:${process.env.PORT}`
 const mongo_url = `mongodb://${process.env.MONGO_USERNAME }:${process.env.MONGO_PASSWORD }@${process.env.MONGO_HOST }`
+console.log(mongo_url)
 
 var api = new ParseServer({
-  databaseURI:mongo_url,
+  databaseURI: mongo_url,
   cloud: process.env.CLOUD_CODE_MAIN,
   appId: process.env.APP_ID,
   restAPIKey: process.env.REST_API_KEY,
@@ -33,7 +34,8 @@ var api = new ParseServer({
   liveQuery: {
     classNames: ['Message']
   },
-  push: {
+  
+  /*push: {
     android: {
       apiKey: process.env.PUSH_ANDROID_KEY
     },
@@ -43,7 +45,7 @@ var api = new ParseServer({
       bundleId: process.env.PUSH_IOS_BUNDLEID,
       production: process.env.PROD
     }
-  }
+  }*/
 });
 
 
